@@ -1,32 +1,64 @@
+
+
+body{
+height: 100vh;
+width: 100vw;
+border: 1px solid green;
+display: inline-block;
+}
+
 .heading-container {
-
-
+    border: 1px solid yellow;
+    text-align: center;
+    font-family: monospace;
+    color: brown;
+    font-size: 25px;
+    height: 10%;
 
 }
 
 .body-container {
-
-
-
-
+    border: 1px solid black;
+    height: 70%;
+    display: flex;
 }
 
-.plyr-container {
-
-
+.plyr-container{
+    font-family: monospace;
+    text-align: left;
+    border: 1px solid blue;
+    color: brown;
+    width: 20%;
+    
 }
 
 .board-container {
-
+    text-align: center;
+    width: 60%;
 
 }
 
 .button-container {
+    width: 20%;
+    text-align: right;
 
-
+    
+}
+.button {
+    font-size: 24px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button:hover { 
+    background-color: gray;
+    color: white;
 }
 
 .msg-container {
 
-    
+    border: 1px solid cyan;
+    height: 25%;
+
+
 }
