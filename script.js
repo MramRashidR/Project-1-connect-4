@@ -2,10 +2,10 @@ const board = document.querySelector(".board-container")
 const cell = document.querySelectorAll(".grid")
 const reset = document.querySelector(".button")
 const msg = document.querySelector(".msg-container")
-const tom = document.querySelector(".firstPlayer")
-const jerry = document.querySelector(".secondPlayer")
+/* const firstPlayer = document.querySelector(".firstPlayer")
+const secondPlayer = document.querySelector(".secondPlayer") */
 
-/* const fourConnected = [
+const fourConnected = [
     [0, 1, 2, 3],
     [41, 40, 39, 38],
     [7, 8, 9, 10],
@@ -75,41 +75,29 @@ const jerry = document.querySelector(".secondPlayer")
     [11, 18, 25, 32],
     [12, 19, 26, 33],
     [13, 20, 27, 34],
-  ]; */
+  ];
     const secondPlayer = 1;
     const firstPlayer = 2;
   
   let userClickedElements = [
-      0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0,
-    ];
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "", 
+    ]
     
     let currentPlyr = 1
+    let running = false ;
+
 
   function startGame(column) {
-    let emptyPlaces = userClickedElements.filter(( _ , index) => index  % 7 === column).lastIndexOf(0);
-    if (emptyPlaces === -1) {
-        return;
-    }
-
-   userClickedElements[(emptyPlaces * 7) + column]  = currentPlyr;
-    let cell = [(emptyPlaces * 7) + column];
-    emptyPlaces = true;
-    cell.appendChild(emptyPlaces);
-
-    if(currentPlyr === secondPlayer) {
-        currentPlyr = firstPlayer
-    } else {
-        currentPlyr = secondPlayer
-    }
-
+    column.forEach(column => column.addEventListener("click" , changeRole));
+    reset.addEventListener("click" , resetGame);
+    running = true
   }
-
-
+  
   function changeRole () {
 
   }
