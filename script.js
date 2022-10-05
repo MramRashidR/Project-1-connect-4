@@ -7,6 +7,18 @@ const secondPlayer = document.querySelector(".secondPlayer") */
 let currentPlyr = "firstPlayer"
 
 
+let columns = [
+    [0 , 7 , 14 , 21 , 28 , 35] , 
+    [1 , 8 , 15 , 22 , 29 , 36] , 
+    [2 , 9 , 16 , 23 , 30 , 37] , 
+    [3 , 10, 17 , 24 , 31 , 38] , 
+    [4 , 11 , 18 , 25 , 32 , 39] ,
+    [5 , 12 , 19 , 26 , 33 , 40] , 
+    [6 , 13 , 20 , 27 , 34 , 41]
+
+];
+
+
 // const secondPlayer = 1;
 let  winnerArrays = [
     [0, 1, 2, 3],
@@ -95,19 +107,32 @@ let  winnerArrays = [
 
 
   function startGame() {
-reset.addEventListener('click', ResetGame)
-
+    reset.addEventListener('click', ResetGame)
     cells.forEach(cell=> cell.addEventListener("click", addPiece));
     running = true
 }
 
 
 function addPiece (event) {
+   
     let clickedCell = event.target
-    clickedCell.classList.add(currentPlyr)
-    clickedCell.removeEventListener('click', addPiece)
-    changeRole()
-  }
+    const conditionA = clickedCell.classList.length === 1
+    const conditionB = clickedCell.id >=35 
+    
+    if (conditionA){
+        if (conditionB){
+            clickedCell.classList.add(currentPlyr)
+            changeRole()
+        } else {
+            const conditionC = document.getElementById(parseInt(clickedCell.id) + 7).classList.length !== 1
+
+            if (conditionC) {
+                clickedCell.classList.add(currentPlyr)
+                changeRole()
+            }
+        }
+    }   
+}
 
 
   function changeRole () {
