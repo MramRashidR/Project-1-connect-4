@@ -18,19 +18,22 @@ body{
 }
 
 .body-container {
-    
     height: 70%;
     display: flex;
 }
 
-.plyr-container{
+.instructions-container{
     font-family: monospace;
-    text-align: left;
-    
+    font-size: 25px;
     color: brown;
     width: 20%;
     text-align: center;
     
+}
+.ply-method {
+    font-size: 30px;
+    text-align: left;
+
 }
 
 .board-container {
@@ -49,8 +52,12 @@ body{
     
 
 .msg-container {
-    
     height: 25%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 40px;
+    color: brown;
+
 }
 
 .reset-button {
@@ -62,6 +69,8 @@ body{
     cursor: pointer;
     padding: 0.5em 0.5em;
     justify-items: center;
+    font-family: monospace;
+    color: brown;
 }
 
 .button-container{
@@ -76,14 +85,12 @@ body{
 
 
 .firstPlayer {
-    /* background-color: yellow; */
     background-image: url("./jerry.png");
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
 .secondPlayer {
-    /* background-color: red; */
     background-image: url("./tom.png");
     background-size: fixed;
 }

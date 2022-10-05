@@ -5,7 +5,7 @@ let msg = document.querySelector(".msg-container")
 /* const firstPlayer = document.querySelector(".firstPlayer")
 const secondPlayer = document.querySelector(".secondPlayer") */
 let currentPlyr = "firstPlayer"
-let  winnerArrays = [
+const winnerArrays = [
     [0, 1, 2, 3],
     [41, 40, 39, 38],
     [7, 8, 9, 10],
@@ -93,6 +93,8 @@ function startGame() {
     reset.addEventListener('click', ResetGame)
     cells.forEach(cell=> cell.addEventListener("click", addPiece));
     running = true
+    msg.textContent = `${currentPlyr}'s turn`
+    checkWinning();
 }
 
 
@@ -120,6 +122,45 @@ function addPiece (event) {
 
 function changeRole () {
     currentPlyr = (currentPlyr == "firstPlayer") ? "secondPlayer" : "firstPlayer";
+    msg.textContent = `${currentPlyr}'s turn`
+}
+
+
+function checkWinning() {
+    let playerWon = false;
+
+    for(let i = 0; i < winnerArrays.length; i++) {
+
+        const check = winnerArrays[i];
+        const indexA = userClickedElements[check[0]];
+        const indexB = userClickedElements[check[1]];
+        const indexC = userClickedElements[check[2]];
+        const indexD = userClickedElements[check[3]];
+
+
+        if(indexA == "" || indexB == "" || indexC == "" || indexD == "") {
+            continue;
+        }
+        if (indexA === indexB && indexB === indexC && indexC === indexD){
+            playerWon = true;
+            break;
+        } 
+
+    }
+
+            if(playerWon) {
+                msg.textContent = `${currentPlyr}'s wins!`
+                running = false ;
+            }
+            else if(!userClickedElements.includes("")) {
+                msg.textContent = `Draw!`
+                running = false;
+
+            }       
+            else { 
+            changeRole() 
+        }
+
 }
 
 
