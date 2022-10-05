@@ -2,21 +2,23 @@
 body{
     height: 100vh;
     width: 100vw;
-    border: 1px solid green;
     display: inline-block;
+    /* background-color: lightslategray; */
 }
 
 .heading-container {
-    border: 1px solid yellow;
+    background-image: url("./header.jpg");
+    background-repeat: inherit;
+    background-size: contain;
     text-align: center;
     font-family: monospace;
     color: brown;
-    font-size: 25px;
+    font-size: 35px;
     height: 10%;
 }
 
 .body-container {
-    border: 1px solid black;
+    
     height: 70%;
     display: flex;
 }
@@ -24,7 +26,7 @@ body{
 .plyr-container{
     font-family: monospace;
     text-align: left;
-    border: 1px solid blue;
+    
     color: brown;
     width: 20%;
     text-align: center;
@@ -34,20 +36,20 @@ body{
 .board-container {
     text-align: center;
     width: 60%;
-    border: 6px solid darkslategrey;
+    
     display: grid;
     grid-template-columns: repeat(7 , auto);
     grid-template-rows: repeat(6 , auto);
 }
 
 .grid {
-    border: 5px solid grey;
+    border: 5px dotted black;
     cursor: pointer;
 }
     
 
 .msg-container {
-    border: 1px solid cyan;
+    
     height: 25%;
 }
 
