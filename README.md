@@ -11,3 +11,6 @@ Sadly, the winner has not yet been recognized, so feel free to contact us with a
 
 Game instructions :
 emphasize the importance of beginning with the bottom cells. Next, decide whether to play as the first or second player to determine your preferred character. Try to place your character in four connected positions to win.
+
+
+the game link : https://mramrashidr.github.io/Project-1-connect-4/ 

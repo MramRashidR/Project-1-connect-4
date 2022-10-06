@@ -162,8 +162,6 @@ function checkWinning() {
         }
 
 }
-
-
     
 function ResetGame () {
     cells.forEach(cell => {
